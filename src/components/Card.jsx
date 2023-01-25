@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IMG from '../assets/0.jpeg';
 
-const Card = () => {
+const Card = ({ handleOpenModal }) => {
   const [mouseOverState, setMouseOverState] = useState(false);
   return (
     <>
@@ -13,7 +13,7 @@ const Card = () => {
         `}
       ></div>
       <div
-        className=" w-60 h-2/3 bg-slate-200 flex flex-col gap-2   shadow-md absolute z-10 rounded-lg"
+        className=" w-60 h-2/3 bg-slate-200 flex flex-col gap-2 pb-5  shadow-md absolute z-10 rounded-lg"
         onMouseOver={() => setMouseOverState(true)}
         onMouseOut={() => setMouseOverState(false)}
       >
@@ -115,7 +115,10 @@ const Card = () => {
           </svg>
           <span>Blantyre, Malawi</span>
         </div>
-        <button className="bg-purple-700 hover:bg-rose-600 text-white font-bold py-2 px-full mx-4 mt-5 rounded-full">
+        <button
+          onClick={handleOpenModal}
+          className="bg-purple-700 hover:bg-rose-600 text-white font-bold py-2 px-full mx-4 mt-5 rounded-full"
+        >
           Send Contact
         </button>
       </div>
