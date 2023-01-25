@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import Card from './components/Card';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-center text-red-500">
-      Hello world!
-    </h1>
+    <>
+      <div className="bg-slate-900 flex justify-center items-center h-screen">
+        <Card />;
+      </div>
+    </>
   );
 }
 
