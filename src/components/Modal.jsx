@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
+import * as All from 'react-share';
 import QRCODE from '../assets/qr-code.png';
 
 const Modal = ({ open, handleCloseModal }) => {
   return (
     <>
       <div
-        class={`relative z-10 ${
+        className={`relative z-10 ${
           !open ? 'hidden' : 'flex'
         } transition ease-in-out duration-300 delay-75`}
         aria-labelledby="modal-title"
         role="dialog"
         aria-modal="true"
       >
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-30 transition-opacity"></div>
-        <div class="fixed inset-0 z-10 overflow-y-auto">
-          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-            <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-60 sm:max-w-lg">
-              <div class="bg-rose-600  h-[700px] sm:h-[500px] overflow-x-hidden overflow-y-hidden">
-                <div class="sm:flex sm:items-start ">
-                  <div class="mt-3 text-center sm:mt-0 p-2 sm:text-left text-white">
-                    <div className="flex gap-6 md:gap-5 justify-between px-2 py-2">
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-30 transition-opacity"></div>
+        <div className="fixed inset-0 z-10 overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div className="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-60 sm:max-w-lg">
+              <div className="bg-rose-600  h-[700px] sm:h-[500px] overflow-x-hidden overflow-y-hidden">
+                <div className="sm:flex sm:items-start ">
+                  <div className="mt-3 text-center sm:mt-0 p-2 sm:text-left text-white">
+                    <div className="flex gap-6 md:gap-5 justify-between items-center px-2 py-2">
                       <div
                         title="close"
                         onClick={handleCloseModal}
-                        className="cursor-pointer"
+                        className="cursor-pointer hover:bg-slate-500 hover:rounded-lg hover:w-6 hover:h-6"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +42,9 @@ const Modal = ({ open, handleCloseModal }) => {
                         </svg>
                       </div>
                       <div>
-                        <h4>Share Work Card</h4>
+                        <h4 className="font-semibold text-sm">
+                          Share Work Card
+                        </h4>
                       </div>
                       <div className="hover:cursor-not-allowed">
                         <svg
@@ -60,16 +63,61 @@ const Modal = ({ open, handleCloseModal }) => {
                         </svg>
                       </div>
                     </div>
-                    <div class="mt-10 flex flex-col items-center">
+                    <div className="mt-10 flex flex-col items-center">
                       <img src={QRCODE} className="w-32 h-32 rounded" alt="" />
-                      <p className="text-sm mt-5 text-center">
+                      <p className="text-xs mt-5 text-center">
                         Point your camera to the QR Code, or visit
-                        https://tinga.gmt3.tech
+                        <span className="pl-1 underline">
+                          <a href="https://tinga.gmt3.tech">
+                            https://tinga.gmt3.tech
+                          </a>
+                        </span>
                       </p>
                     </div>
-                    {/* <div className="mt-5 flex">
-                      <button className="">Share Link</button>
-                    </div> */}
+                    <div className="mt-10 grid grid-cols-4 gap-4 ml-4">
+                      <All.FacebookShareButton url="https://tinga.gmt3.tech">
+                        <All.FacebookIcon
+                          size={32}
+                          round={true}
+                        ></All.FacebookIcon>
+                      </All.FacebookShareButton>
+                      <All.TwitterShareButton url="https://tinga.gmt3.tech">
+                        <All.TwitterIcon
+                          size={32}
+                          round={true}
+                        ></All.TwitterIcon>
+                      </All.TwitterShareButton>
+                      <All.LinkedinShareButton url="https://tinga.gmt3.tech">
+                        <All.LinkedinIcon
+                          size={32}
+                          round={true}
+                        ></All.LinkedinIcon>
+                      </All.LinkedinShareButton>
+                      <All.FacebookMessengerShareButton url="https://tinga.gmt3.tech">
+                        <All.FacebookMessengerIcon
+                          size={32}
+                          round={true}
+                        ></All.FacebookMessengerIcon>
+                      </All.FacebookMessengerShareButton>
+                      <All.EmailShareButton url="https://tinga.gmt3.tech">
+                        <All.EmailIcon size={32} round={true}></All.EmailIcon>
+                      </All.EmailShareButton>
+                      <All.WhatsappShareButton url="https://tinga.gmt3.tech">
+                        <All.WhatsappIcon
+                          size={32}
+                          round={true}
+                        ></All.WhatsappIcon>
+                      </All.WhatsappShareButton>
+                      <All.TelegramShareButton url="https://tinga.gmt3.tech">
+                        <All.TelegramIcon
+                          size={32}
+                          round={true}
+                        ></All.TelegramIcon>
+                      </All.TelegramShareButton>
+                      <All.ViberShareButton url="https://tinga.gmt3.tech">
+                        <All.ViberIcon size={32} round={true}></All.ViberIcon>
+                      </All.ViberShareButton>
+                    </div>
                   </div>
                 </div>
               </div>
