@@ -9,11 +9,11 @@ const Card = ({ handleOpenModal }) => {
         className={`
           ${
             mouseOverState ? ' bg-rose-600 scale-100' : 'bg-purple-700 scale-95'
-          } transition ease-in-out duration-300 delay-75 w-60 h-2/3 shadow-md absolute z-0 transform  -rotate-6 rounded-lg
+          } transition ease-in-out duration-300 delay-75 w-64 md:w-60 md:h-2/3 h-3/4 shadow-md absolute z-0 transform  -rotate-6 rounded-lg
         `}
       ></div>
       <div
-        className=" w-60 h-2/3 bg-slate-200 flex flex-col gap-2 pb-5  shadow-md absolute z-10 rounded-lg"
+        className=" w-64 md:w-60 h-3/4 md:h-2/3 bg-slate-200 flex flex-col gap-2 pb-5  shadow-md absolute z-10 rounded-lg"
         onMouseOver={() => setMouseOverState(true)}
         onMouseOut={() => setMouseOverState(false)}
       >
